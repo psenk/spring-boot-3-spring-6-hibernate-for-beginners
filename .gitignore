@@ -252,6 +252,9 @@ Temporary Items
 
 ### Maven ###
 target/
+.mvn/
+mvnw
+mvnw.cmd
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -259,7 +262,6 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
@@ -270,7 +272,7 @@ buildNumber.properties
 .classpath
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
