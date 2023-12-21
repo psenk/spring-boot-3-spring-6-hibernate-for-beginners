@@ -25,7 +25,7 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
     @Autowired
     // define constructor for DI
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach/*,
+    public DemoController(@Qualifier("aquatic") Coach theCoach/*,
             @Qualifier("cricketCoach") Coach theAnotherCoach*/) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
