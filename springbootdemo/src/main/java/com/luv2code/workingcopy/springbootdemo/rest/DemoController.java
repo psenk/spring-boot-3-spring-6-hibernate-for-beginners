@@ -24,13 +24,13 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
     @Autowired
     // define constructor for DI
-    public DemoController(@Qualifier("baseballCoach") Coach theCoach) {
+    public DemoController(/*@Qualifier("baseballCoach")*/ Coach theCoach) {
         myCoach = theCoach;
     }
 
     // SETTER INJECTION
     @Autowired
-    public void setCoach(@Qualifier("cricketCoach") Coach theCoach) {
+    public void setCoach(/*@Qualifier("cricketCoach")*/ Coach theCoach) {
         myCoach = theCoach;
     }
 
