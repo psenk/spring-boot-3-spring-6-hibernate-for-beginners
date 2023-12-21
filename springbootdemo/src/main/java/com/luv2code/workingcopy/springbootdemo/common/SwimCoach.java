@@ -1,5 +1,6 @@
 package com.luv2code.workingcopy.springbootdemo.common;
 
+// 3rd party software (not a component)
 public class SwimCoach implements Coach {
 
     public SwimCoach() {
