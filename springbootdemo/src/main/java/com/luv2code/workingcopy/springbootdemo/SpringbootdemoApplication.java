@@ -1,5 +1,7 @@
 package com.luv2code.workingcopy.springbootdemo;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +27,16 @@ public class SpringbootdemoApplication {
 		return runner -> 
 		//createStudent(studentDAO);
 		//createMultipleStudents(studentDAO);
-		readStudent(studentDAO);
+		//readStudent(studentDAO);
+		queryForStudents(studentDAO);
+	}
+
+	private void queryForStudents(StudentDAO studentDAO) {
+		List<Student> theStudents = studentDAO.findAll();
+		
+		for (Student s : theStudents) {
+			System.out.println(s);
+		}
 	}
 
 	private void readStudent(StudentDAO studentDAO) {
@@ -36,7 +47,7 @@ public class SpringbootdemoApplication {
 		studentDAO.save(tempStudent);
 		
 		// display student id
-		int theID = tempStudent.getId()
+		int theID = tempStudent.getId();
 		System.out.println("Student ID number: " + theID);
 
 		// retrieve student based on id
