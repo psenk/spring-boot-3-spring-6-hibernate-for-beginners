@@ -5,5 +5,6 @@ import com.luv2code.workingcopy.springbootdemo.entity.Student;
 public interface StudentDAO {
 
     void save(Student theStudent);
+    Student findById(Integer id);
 
 }

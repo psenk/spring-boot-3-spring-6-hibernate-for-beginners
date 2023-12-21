@@ -23,7 +23,39 @@ public class SpringbootdemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		// lambda function
 		return runner -> 
-		createStudent(studentDAO);
+		//createStudent(studentDAO);
+		//createMultipleStudents(studentDAO);
+		readStudent(studentDAO);
+	}
+
+	private void readStudent(StudentDAO studentDAO) {
+		// create student
+		Student tempStudent = new Student("Kyle", "Beaver", "fakeemail@email.com");
+
+		// save student
+		studentDAO.save(tempStudent);
+		
+		// display student id
+		int theID = tempStudent.getId()
+		System.out.println("Student ID number: " + theID);
+
+		// retrieve student based on id
+		tempStudent = studentDAO.findById(theID);
+
+		// display student
+		System.out.println(tempStudent.toString());
+	}
+
+	private void createMultipleStudents(StudentDAO studentDAO) {
+		// create students
+		Student tempStudent1 = new Student("John", "Carpenter", "john@email.com");
+		Student tempStudent2 = new Student("Jane", "Bless", "jane@email.com");
+		Student tempStudent3 = new Student("Benita", "Applebaum", "benita@email.com");
+
+		// save students
+		studentDAO.save(tempStudent1);
+		studentDAO.save(tempStudent2);
+		studentDAO.save(tempStudent3);
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
