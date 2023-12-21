@@ -24,15 +24,20 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
     @Autowired
     // define constructor for DI
-    public DemoController(/*@Qualifier("baseballCoach")*/ Coach theCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+        System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
     }
 
     // SETTER INJECTION
-    @Autowired
-    public void setCoach(/*@Qualifier("cricketCoach")*/ Coach theCoach) {
-        myCoach = theCoach;
-    }
+    /*
+     * @Autowired
+     * public void setCoach(/*@Qualifier("cricketCoach")
+     * Coach theCoach)
+     * {
+     * myCoach = theCoach;
+     * }
+     */
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
