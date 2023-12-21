@@ -16,6 +16,7 @@ public class DemoController {
 
     // define private field for dependency
     private Coach myCoach;
+    private Coach anotherCoach;
 
     // no args constructor
     public DemoController() {
@@ -24,23 +25,30 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
     @Autowired
     // define constructor for DI
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach,
+            @Qualifier("cricketCoach") Coach theAnotherCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
     // SETTER INJECTION
     /*
      * @Autowired
-     * public void setCoach(/*@Qualifier("cricketCoach")
-     * Coach theCoach)
-     * {
+     * public void setCoach(/*@Qualifier("cricketCoach") Coach theCoach) {
      * myCoach = theCoach;
      * }
      */
 
+    // directing to /dailyworkout URL
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
+    }
+
+    // Scope practice
+    @GetMapping("/check")
+    public String check() {
+        return "Comparing beans: myCoach == anotherCoach: " + (myCoach == anotherCoach);
     }
 }
