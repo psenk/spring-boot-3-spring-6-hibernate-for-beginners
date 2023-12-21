@@ -1,4 +1,4 @@
-package com.luv2code.workingcopy.springbootdemo;
+package com.luv2code.workingcopy.springbootdemo.common;
 
 public interface Coach {
 
