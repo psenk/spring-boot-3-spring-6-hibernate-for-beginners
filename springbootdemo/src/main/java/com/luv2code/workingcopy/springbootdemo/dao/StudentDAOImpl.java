@@ -11,6 +11,7 @@ import jakarta.transaction.Transactional;
 // ALL JPA queries utilize entity name/fields, NOT database names
 
 // REPOSITORY - spring component
+// TRANSACTIONAL - needed for adding/updating data, NOT for read only queries
 @Repository
 public class StudentDAOImpl implements StudentDAO {
 
@@ -56,6 +57,20 @@ public class StudentDAOImpl implements StudentDAO {
 
         // return results
         return theQuery.getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void update(Student theStudent) {
+        
+        entityManager.merge(theStudent);
+        
+    }
+
+    @Override
+    @Transactional
+    public void delete(Integer id) {
+        entityManager.remove(findById(id));
     }
 
 }

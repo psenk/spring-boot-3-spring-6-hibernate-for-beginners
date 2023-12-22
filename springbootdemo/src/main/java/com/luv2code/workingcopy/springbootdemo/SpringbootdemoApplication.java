@@ -29,7 +29,23 @@ public class SpringbootdemoApplication {
 		//createMultipleStudents(studentDAO);
 		//readStudent(studentDAO);
 		//queryForStudents(studentDAO);
-		queryForStudentsByLastName(studentDAO);
+		//queryForStudentsByLastName(studentDAO);
+		updateStudent(studentDAO);
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		// retrieve student by id
+		int studentId = 1;
+		Student theStudent = studentDAO.findById(studentId);
+
+		// change name
+		theStudent.setFirstName("Scooby");
+
+		// update student
+		studentDAO.update(theStudent);
+
+		// display student
+		System.out.println("Updated student: " + theStudent);
 	}
 
 	private void queryForStudentsByLastName(StudentDAO studentDAO) {
