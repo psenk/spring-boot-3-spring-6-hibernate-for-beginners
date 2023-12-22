@@ -26,13 +26,13 @@ public class SpringbootdemoApplication {
 		// lambda function
 		return runner -> 
 		//createStudent(studentDAO);
-		//createMultipleStudents(studentDAO);
+		createMultipleStudents(studentDAO);
 		//readStudent(studentDAO);
 		//queryForStudents(studentDAO);
 		//queryForStudentsByLastName(studentDAO);
 		//updateStudent(studentDAO);
 		//deleteStudent(studentDAO);
-		deleteAll(studentDAO);
+		//deleteAll(studentDAO);
 	}
 
 	private void deleteAll(StudentDAO studentDAO) {
