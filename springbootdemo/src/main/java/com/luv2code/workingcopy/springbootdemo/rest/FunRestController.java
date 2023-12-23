@@ -1,6 +1,6 @@
 package com.luv2code.workingcopy.springbootdemo.rest;
 
-import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class FunRestController {
 
     // injecting custom properties from application.properties
-    @Value("${coach.name}")
+    //@Value("${coach.name}")
     private String coachName;
-    @Value("${team.name}")
+    //@Value("${team.name}")
     private String teamName;
 
     // new endpoint for /teaminfo
