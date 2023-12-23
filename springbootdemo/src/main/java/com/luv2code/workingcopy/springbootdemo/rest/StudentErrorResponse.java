@@ -1,6 +1,6 @@
 package com.luv2code.workingcopy.springbootdemo.rest;
 
-// error response POJO
+// error response POJO - basic skeleton for what gets sent back following an error
 public class StudentErrorResponse {
 
     private int status;

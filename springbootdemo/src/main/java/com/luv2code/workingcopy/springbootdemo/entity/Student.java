@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// one data object - class is Table name, IDs are colums.  One Student = one row in table
 @Entity
 @Table(name = "student")
 public class Student {

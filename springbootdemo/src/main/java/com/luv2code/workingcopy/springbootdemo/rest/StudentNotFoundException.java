@@ -1,5 +1,6 @@
 package com.luv2code.workingcopy.springbootdemo.rest;
 
+// making actual exception
 public class StudentNotFoundException extends RuntimeException {
 
     public StudentNotFoundException(String message) {
