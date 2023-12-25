@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class CricketCoach implements Coach {
 
 	public CricketCoach() {
-		System.out.println("In constructor: " + getClass().getSimpleName());
+		//System.out.println("In constructor: " + getClass().getSimpleName());
 	}
 
 	// POST CONSTRUCT - this code runs first before the bean is created

@@ -27,7 +27,7 @@ public class DemoController {
     // define constructor for DI
     public DemoController(@Qualifier("aquatic") Coach theCoach/*,
             @Qualifier("cricketCoach") Coach theAnotherCoach*/) {
-        System.out.println("In constructor: " + getClass().getSimpleName());
+        //System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
         //anotherCoach = theAnotherCoach;
     }
