@@ -1,8 +1,7 @@
-package com.luv2code.workingcopy.springbootdemo.rest;
+/* package com.luv2code.workingcopy.springbootdemo.rest;
 
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -76,3 +75,4 @@ public class EmployeeRestController {
     }
 
 }
+ */

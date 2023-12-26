@@ -1,4 +1,4 @@
-package com.luv2code.workingcopy.springbootdemo.dao;
+/* package com.luv2code.workingcopy.springbootdemo.dao;
 
 import java.util.List;
 
@@ -12,3 +12,4 @@ public interface EmployeeDAO {
     void deleteById(int theId);
 
 }
+ */
