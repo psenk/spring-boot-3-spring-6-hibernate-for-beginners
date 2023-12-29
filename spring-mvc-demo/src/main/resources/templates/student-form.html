@@ -22,10 +22,20 @@
             Country:
             <select th:field="*{country}">
                 <!-- th:each is a for loop -->
+                <!-- th:field = data binding value -->
+                <!-- th:value = what is sent with the form -->
                 <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+                
             </select>
 
-            <input type="submit">
+            <br><br>
+
+            Favorite programming language:
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Go">Go</input>
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Java">Java</input>
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
+
+            <input type="submit" value="Submit">
 
         </form>
         
