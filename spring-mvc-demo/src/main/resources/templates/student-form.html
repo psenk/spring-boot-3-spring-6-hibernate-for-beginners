@@ -20,6 +20,7 @@
             <br><br>
 
             Country:
+            <!-- dropdown -->
             <select th:field="*{country}">
                 <!-- th:each is a for loop -->
                 <!-- th:field = data binding value -->
@@ -31,9 +32,8 @@
             <br><br>
 
             Favorite programming language:
-            <input type="radio" th:field="*{favoriteLanguage}" th:value="Go">Go</input>
-            <input type="radio" th:field="*{favoriteLanguage}" th:value="Java">Java</input>
-            <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
+            <!-- radio buttons -->
+            <input type="radio" th:field="*{favoriteLanguage}" th:each="tempLang : ${languages}" th:value="${tempLang}" th:text="${tempLang}">
 
             <input type="submit" value="Submit">
 

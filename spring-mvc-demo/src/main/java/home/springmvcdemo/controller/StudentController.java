@@ -16,8 +16,12 @@ public class StudentController {
 
     // fields
     // importing value from the application.properties file
+    // must match name of value in applications.properties
     @Value("${countries}")
     private List<String> countries;
+
+    @Value("${languages}")
+    private List<String> languages;
 
     @GetMapping("/showStudentForm")
     public String showForm(Model model) {
@@ -27,8 +31,8 @@ public class StudentController {
 
         // add student to model as attribute
         model.addAttribute("student", newStudent);
-
         model.addAttribute("countries", countries);
+        model.addAttribute("languages", languages);
 
         return "student-form";
 
