@@ -2,6 +2,9 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
+    <!-- @ symbol refers to application context path -->
+    <!-- $ symbol refers to the application model -->
+    <!-- * symbol is shorthand for accessing object fields (e.g student.field) -->
     <head>
         <meta charset="UTF-8">
         <title>Student Registration Form</title>
@@ -13,7 +16,17 @@
         <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
             First name: <input type="text" th:field="*{firstName}">
             Last name: <input type="text" th:field="*{lastName}">
+
+            <br><br>
+
+            Country:
+            <select th:field="*{country}">
+                <!-- th:each is a for loop -->
+                <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+            </select>
+
             <input type="submit">
+
         </form>
         
     </body>
