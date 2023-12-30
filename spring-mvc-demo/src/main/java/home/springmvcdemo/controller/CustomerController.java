@@ -19,7 +19,7 @@ public class CustomerController {
     // INIT BINDER - this is done to the data before it is mapped
     @InitBinder
     public void initbinder(WebDataBinder dataBinder) {
-        
+
         // trims leading and trailing whitespace
         // returns null if all whitespace
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -40,6 +40,10 @@ public class CustomerController {
     public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult result) {
         
         System.out.println("Last name: |" + customer.getLastName() + "|");
+
+        System.out.println("Binding results: " + result.toString());
+
+        System.out.println();
 
         if (result.hasErrors()) {
             return "customer-form";
