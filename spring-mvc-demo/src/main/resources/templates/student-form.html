@@ -23,7 +23,7 @@
             <!-- dropdown -->
             <select th:field="*{country}">
                 <!-- th:each is a for loop -->
-                <!-- th:field = data binding value -->
+                <!-- th:field = data binding value (where we are storing this data to)-->
                 <!-- th:value = what is sent with the form -->
                 <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
                 
@@ -34,6 +34,13 @@
             Favorite programming language:
             <!-- radio buttons -->
             <input type="radio" th:field="*{favoriteLanguage}" th:each="tempLang : ${languages}" th:value="${tempLang}" th:text="${tempLang}">
+
+            <br><br>
+
+            Favorite operating systems:
+            <!-- checkboxes -->
+            <!-- if a value has spaces, it should be placed in single quotes '' -->
+            <input type="checkbox" th:field="*{favoriteSystems}" th:each="tempSystem : ${systems}" th:value="${tempSystem}" th:text="${tempSystem}">
 
             <input type="submit" value="Submit">
 

@@ -1,5 +1,7 @@
 package home.springmvcdemo.model;
 
+import java.util.List;
+
 public class Student {
 
     // fields
@@ -7,10 +9,13 @@ public class Student {
     private String lastName;
     private String country;
     private String favoriteLanguage;
+    private List<String> favoriteSystems;
+
 
     // constructors
     public Student() {
     }
+
 
     // getters and setters
     public String getFirstName() {
@@ -45,4 +50,11 @@ public class Student {
         this.favoriteLanguage = favoriteLanguage;
     }
 
+    public List<String> getFavoriteSystems() {
+        return favoriteSystems;
+    }
+
+    public void setFavoriteSystems(List<String> favoriteSystems) {
+        this.favoriteSystems = favoriteSystems;
+    }
 }
