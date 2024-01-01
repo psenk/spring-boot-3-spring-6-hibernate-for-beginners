@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <!-- $ to access model -->
+<!-- @ to access application root -->
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
@@ -12,20 +13,25 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-</head>
-
 <body>
 
     <div class="container">
 
         <h3>Employee Directory</h3>
+
         <hr>
+
+        <a th:href="@{/employees/addEmployeeForm}" class="btn btn-primary btn-sm mb-3">
+            Add Employee
+        </a>
+
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +39,10 @@
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                     <td th:text="${employee.email}"></td>
+                    <td><a th:href="@{/employees/updateEmployeeForm(employeeId=${employee.id})}"
+                            class="btn btn-info btn-sm">Update</a>
+                        <a th:href="@{/employees/deleteEmployee(employeeId=${employee.id})}" class="btn btn-danger btn-sm" onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
