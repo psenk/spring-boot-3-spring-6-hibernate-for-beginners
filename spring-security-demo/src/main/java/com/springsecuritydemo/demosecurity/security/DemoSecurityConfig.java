@@ -22,13 +22,17 @@ public class DemoSecurityConfig {
         return new InMemoryUserDetailsManager(john, mary, susan);
     }
 
+    // filter incoming http requests
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         // custom login forms require custom error messages
         // authorize all authenticated requests
         http.authorizeHttpRequests(configurer -> configurer.anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/loginPage").loginProcessingUrl("/authenticateUser").permitAll());
+                // add spring security login support
+                .formLogin(form -> form.loginPage("/loginPage").loginProcessingUrl("/authenticateUser").permitAll())
+                // adds spring security logout support
+                .logout(logout -> logout.permitAll());
 
         return http.build();
     }
