@@ -15,8 +15,10 @@ public class DemoSecurityConfig {
     public InMemoryUserDetailsManager userDetailsManager() {
 
         UserDetails john = User.builder().username("john").password("{noop}test123").roles("EMPLOYEE").build();
-        UserDetails mary = User.builder().username("mary").password("{noop}test123").roles("EMPLOYEE","MANAGER").build();
-        UserDetails susan = User.builder().username("susan").password("{noop}test123").roles("EMPLOYEE","MANAGER","ADMIN").build();
+        UserDetails mary = User.builder().username("mary").password("{noop}test123").roles("EMPLOYEE", "MANAGER")
+                .build();
+        UserDetails susan = User.builder().username("susan").password("{noop}test123")
+                .roles("EMPLOYEE", "MANAGER", "ADMIN").build();
 
         return new InMemoryUserDetailsManager(john, mary, susan);
     }
@@ -34,9 +36,13 @@ public class DemoSecurityConfig {
                 .requestMatchers("/systems/**").hasRole("ADMIN")
                 .anyRequest().authenticated())
                 // add spring security login support
-                .formLogin(form -> form.loginPage("/loginPage").loginProcessingUrl("/authenticateTheUser").permitAll())
+                .formLogin(form -> form.loginPage("/loginPage")
+                        .loginProcessingUrl("/authenticateTheUser").permitAll())
                 // adds spring security logout support
-                .logout(logout -> logout.permitAll());
+                .logout(logout -> logout.permitAll())
+                // custom error page
+                .exceptionHandling(configurer -> configurer
+                .accessDeniedPage("/access-denied"));
 
         return http.build();
     }
