@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DemoController {
 
-    Logger logger = LoggerFactory.getLogger(DemoController.class);
+    //Logger logger = LoggerFactory.getLogger(DemoController.class);
 
     @GetMapping("/")
     public String showHome() {
-        logger.trace("A TRACE Message");
         return "home";
     }
 
@@ -28,7 +27,5 @@ public class DemoController {
     public String showSystems() {
         return "systems";
     }
-    
-    
 
 }
